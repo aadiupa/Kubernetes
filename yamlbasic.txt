@@ -1,0 +1,6 @@
+In kubernetes definition file always contains 4 top level fields 
+apiversion:
+kind:
+metadata:
+
+spec:`
