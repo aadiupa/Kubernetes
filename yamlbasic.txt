@@ -1,6 +1,12 @@
 In kubernetes definition file always contains 4 top level fields 
-apiversion:
-kind:
+apiversion: v1 or some other version
+kind: Pod (kind of object) / replicaset/deploment etc
 metadata:
+   name: myapp-pod
+   labels:
+        app: myapp
+	type: front-end
+anyother property cannot be added
 
+(spec this is where we provide additional information, spec is a dictionary, add property)
 spec:
