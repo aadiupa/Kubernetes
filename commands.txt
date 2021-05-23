@@ -1,0 +1,11 @@
+ReplicaSet -
+
+kubectl create -f repliaset-definition.yml -- create the replicaset and its pods based on the file
+
+kubectl get replicaset -- get replica set
+
+kubectl delete replicaset myapp-replicaset -- delete pods and replicaset (myapp-replicaset is the name of metadata name)
+
+kubectl replace -f replicaset-definition.yml (updates the replicaset as changed in the file)
+
+kubectl scale --replicas=5 -f replicaset.yml (updates the number of replicas)
