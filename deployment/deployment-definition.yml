@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-Deployment
-  label:
+  name: my-deployment
+  labels:
     app: myapp
     type: frontend
 spec:
@@ -11,8 +11,8 @@ spec:
       name: myapp-pod
       labels:
         app: myapp
-  spec:
-    containers:
+    spec:
+     containers:
       - name: nginx-container
         image: nginx
   replicas: 6
