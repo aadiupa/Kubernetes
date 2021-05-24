@@ -9,3 +9,6 @@ kubectl delete replicaset myapp-replicaset -- delete pods and replicaset (myapp-
 kubectl replace -f replicaset-definition.yml (updates the replicaset as changed in the file)
 
 kubectl scale --replicas=5 -f replicaset.yml (updates the number of replicas)
+
+
+Deployments -
