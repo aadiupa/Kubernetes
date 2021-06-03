@@ -1,3 +1,5 @@
+kubectl get all
+
 ReplicaSet -
 
 kubectl create -f repliaset-definition.yml -- create the replicaset and its pods based on the file
@@ -12,3 +14,17 @@ kubectl scale --replicas=5 -f replicaset.yml (updates the number of replicas)
 
 
 Deployments -
+
+kubectl create -f deployment-definition.yml -- create Deployment
+
+kubectl get deployments -- get deloyments
+
+kubectl apply -f deployment-definition.yml -- updates
+
+kubectl set image deployment/DEPLOYMENT_NAME nginx=nginx:1.9.1 -- updates
+
+kubectl rollout status deployment/DEPLOYMENT_NAME -- status
+
+kubectl rollout history deployment/DEPLOYMENT_NAME -- status
+
+kubectl rollout undo deployment/DEPLOYMENT_NAME -- undo/rollback
