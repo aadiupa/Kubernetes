@@ -12,7 +12,7 @@ spec:
       name: result-app-pod
       app: demo-voting-app
   template:
-  metadata:
+   metadata:
     name: result-app-pod
     labels:
       name: result-app-pod
