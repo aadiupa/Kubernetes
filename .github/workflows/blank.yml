@@ -1,7 +1,39 @@
-#!/bin/bash -ex
+# This is a basic workflow to help you get started with Actions
 
-# Use of this script is to match the difference between 2 git commits.
+name: CI
 
-commit1=$1
-commit2=$2
-git show --pretty="" --name-only eb769d68926e94b6672c19761357a45c47d168de 93a6304553b19dd44648308b144210676d6c5ec0
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          chmod +x ./script
+          ls -l ./script
+          echo test, and deploy your project.
+      - name: Run a script
+        run: ./script
