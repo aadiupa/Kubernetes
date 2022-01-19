@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Use of this script is to match the difference between 2 git commits.
+
+commit1=$1
+commit2=$2
+git show --pretty="" --name-only eb769d68926e94b6672c19761357a45c47d168de 93a6304553b19dd44648308b144210676d6c5ec0
+
+
