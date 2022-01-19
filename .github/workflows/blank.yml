@@ -1,38 +1,7 @@
-# This is a basic workflow to help you get started with Actions
+#!/bin/bash -ex
 
-name: CI
+# Use of this script is to match the difference between 2 git commits.
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  scan-files-for-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.code-scan.outputs.folders }}
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: check-for-changes
-        id: code-scan
-        run: |
-          echo "::set-output name=folders::$(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.sha }}| xargs -L1 dirname | uniq )" 
-          echo "This should now show the list of folders" 
-          echo ${{steps.code-scan.outputs.folders}}
-      - name: list-all
-        id: sanity-check
-        run: |
-          for folder in ${{steps.code-scan.outputs.folders}}; do
-            echo $folder
-          done
+commit1=$1
+commit2=$2
+git show --pretty="" --name-only eb769d68926e94b6672c19761357a45c47d168de 93a6304553b19dd44648308b144210676d6c5ec0
