@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 # Use of this script is to match the difference between 2 git commits.
 
