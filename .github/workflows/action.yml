@@ -13,3 +13,4 @@ jobs:
       with:
         accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
         projKey: production
+        debug: true
